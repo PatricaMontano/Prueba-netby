@@ -1,4 +1,4 @@
-Ejecución de la Solución
+Ejecución de la Solución 1
 
 Para levantar el proyectos e debe ejecutar el comando
 
@@ -14,3 +14,9 @@ D:\\Descargas\\Ejemplo.png
 Para la ejecución de las pruebas se debe ejecutar:
 
 npx mocha TestCases/Case1.js
+
+
+Ejecución de la Solución 2
+Para la ejecución de las pruebas se debe ejecutar:
+
+node .\TestCases\Case2.js

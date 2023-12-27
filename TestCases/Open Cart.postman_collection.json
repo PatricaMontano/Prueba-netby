@@ -1,0 +1,390 @@
+{
+	"info": {
+		"_postman_id": "fb044576-357e-4cbc-ba32-58e000a5fe04",
+		"name": "Open Cart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18528186"
+	},
+	"item": [
+		{
+			"name": "Login Succesfull",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test('Status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"// Verifica que la respuesta no contiene el mensaje de advertencia\r",
+							"pm.test(\"La respuesta no contiene el mensaje de advertencia\", function () {\r",
+							"    pm.expect(pm.response.text()).to.not.include(\"Warning: No match for E-Mail Address and/or Password.\");\r",
+							"});\r",
+							"\r",
+							"// Verifica que la respuesta contiene \"My Account\"\r",
+							"pm.test(\"La respuesta contiene 'My Account'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"My Account\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es-US,es-419;q=0.9,es;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cookie",
+						"value": "OCSESSID=119b3c2ea9419aa0d37c352686; language=en-gb; currency=USD"
+					},
+					{
+						"key": "Origin",
+						"value": "https://opencart.abstracta.us"
+					},
+					{
+						"key": "Referer",
+						"value": "https://opencart.abstracta.us/index.php?route=account/login"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "document"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "navigate"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "Sec-Fetch-User",
+						"value": "?1"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "johanna.montano@unl.edu.ec",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=account/login",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/login"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout Succesfull",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.cookies.clear();\r",
+							"\r",
+							"pm.test('Status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"// Verifica que la respuesta no contiene el mensaje de advertencia\r",
+							"pm.test(\"La respuesta no contiene el mensaje de advertencia\", function () {\r",
+							"    pm.expect(pm.response.text()).to.not.include(\"Warning: No match for E-Mail Address and/or Password.\");\r",
+							"});\r",
+							"\r",
+							"// Verifica que la respuesta contiene \"My Account\"\r",
+							"pm.test(\"La respuesta contiene 'My Account'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"My Account\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es-US,es-419;q=0.9,es;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cookie",
+						"value": "OCSESSID=119b3c2ea9419aa0d37c352686; language=en-gb; currency=USD"
+					},
+					{
+						"key": "Origin",
+						"value": "https://opencart.abstracta.us"
+					},
+					{
+						"key": "Referer",
+						"value": "https://opencart.abstracta.us/index.php?route=account/login"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "document"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "navigate"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "Sec-Fetch-User",
+						"value": "?1"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=account/logout",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/logout"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Failed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.cookies.clear();\r",
+							"\r",
+							"pm.test('Status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"// Verifica que la respuesta contiene el mensaje de advertencia\r",
+							"pm.test(\"La respuesta contiene el mensaje de advertencia\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Warning\");\r",
+							"});\r",
+							"\r",
+							"// Verifica que la respuesta contiene \"Forgotten Password\"\r",
+							"pm.test(\"La respuesta contiene 'Forgotten Password'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Forgotten Password\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es-US,es-419;q=0.9,es;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "https://opencart.abstracta.us"
+					},
+					{
+						"key": "Referer",
+						"value": "https://opencart.abstracta.us/index.php?route=account/login"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "document"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "navigate"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "Sec-Fetch-User",
+						"value": "?1"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "johanna123@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "4646468578",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=account/login",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/login"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

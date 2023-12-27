@@ -1,0 +1,8 @@
+Hallazgos de la Solución
+
+1. Se verifica que se automatiza por medio de Postaman,
+obteniendo una respuesta HTML
+
+2.Despues del login se debe hacer un logout para seguir con el siguiente caso de login fallido
+
+3.en cada intento se quedan grabadas cookies
