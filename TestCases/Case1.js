@@ -5,11 +5,11 @@ const HomePage = require('../pages/home_page');
 const CheckoutPage = require('../pages/checkout_page');
 
 var capabilities = {
-    'browserName' : 'chrome',
-    'chromeOptions' : {
-
+    'browserName': 'chrome',
+    'chromeOptions': {
+        'args': ['--enable-javascript'] // or ['--javascriptEnabled']
     }
-}
+};
 
 describe('Suit de Prubas de Compra de Boletos', () => {
     let driver;
@@ -17,12 +17,11 @@ describe('Suit de Prubas de Compra de Boletos', () => {
 
     before(async () => {
         driver = await new Builder().withCapabilities(capabilities).build(); 
-        //await driver.get('https://demo.testim.io/'); 
+        await driver.get('https://demo.testim.io/'); 
           
     });
 
-    it('Validar titulo de pagina web', async () => { 
-        await driver.get('https://demo.testim.io/');        
+    it('Validar titulo de pagina web', async () => {       
         try {    
             homePage = new HomePage(driver);
             const title = await homePage.getTitlePage();
@@ -90,7 +89,7 @@ describe('Suit de Prubas de Compra de Boletos', () => {
     }                
 });
 
-  it('filtrar planetas de color azul', async () => {        
+  it('filtrar planetas de color azul', async () => {     
     try {
         homePage = new HomePage(driver);
         await homePage.filterColourPlanet("Blue");
@@ -164,6 +163,21 @@ it('Ingresar el codigo promocional', async () => {
         //await driver.sleep(5000);
         await checkoutPage.addPromotion('30076');
              
+    } catch (error) {
+        if (error instanceof AssertionError) {
+            // Output expected AssertionErrors.
+            throw new Error(error);                
+        } else {
+            // Output unexpected Errors.
+            console.log(error);
+        }                   
+    }                
+});
+
+it('seleccionar pagar', async () => {        
+    try {
+        checkoutPage = new CheckoutPage(driver);
+        await checkoutPage.selectPayNow();
     } catch (error) {
         if (error instanceof AssertionError) {
             // Output expected AssertionErrors.

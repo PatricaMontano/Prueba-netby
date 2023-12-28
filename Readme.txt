@@ -13,7 +13,7 @@ D:\\Descargas\\Ejemplo.png
 
 Para la ejecución de las pruebas se debe ejecutar:
 
-npx mocha TestCases/Case1.js
+npx mocha TestCases/Case1.js --timeout 10000
 
 
 Ejecución de la Solución 2

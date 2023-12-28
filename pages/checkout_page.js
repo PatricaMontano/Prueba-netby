@@ -23,6 +23,7 @@ class CheckoutPage {
     }
 
     async selectPayNow(){
+        await this.driver.findElement(By.css('[data-react-toolbox="check"]')).click();
         await this.driver.findElement(By.xpath('//button[.="Pay now"]')).click();
     }
 }
