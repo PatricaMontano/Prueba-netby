@@ -4,14 +4,18 @@ const { Builder, until } = require('selenium-webdriver');
 const HomePage = require('../pages/home_page');
 const CheckoutPage = require('../pages/checkout_page');
 
-var capabilities = {
+const capabilities = {
     'browserName': 'chrome',
-    'chromeOptions': {
-        'args': ['--enable-javascript'] // or ['--javascriptEnabled']
+    'goog:chromeOptions': {
+        'args': ['--enable-javascript'],
+        'extensions': [],
+        'prefs': {
+            'intl.accept_languages': 'en-US'
+        }
     }
 };
 
-describe('Suit de Prubas de Compra de Boletos', () => {
+describe('Suit de Pruebas de Compra de Boletos', () => {
     let driver;
     let homePage;
 
@@ -189,5 +193,5 @@ it('seleccionar pagar', async () => {
     }                
 });
 
-    after(async () => driver.quit());
+    //after(async () => driver.quit());
 })
